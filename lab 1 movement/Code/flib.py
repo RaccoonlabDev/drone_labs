@@ -11,7 +11,7 @@ def navigate_local(x, y, z, speed, clientID, QuadricopterT):
     x_k = 0
     y_k = 0
     z_k = 0
-    m = x_time
+    m = x_timenavigate_local
     x_m = 0
     y_m = 0
     z_m = 0
@@ -87,3 +87,7 @@ def navigate_map(x, y, z, speed, clientID, QuadricopterT):
 def get_pos(clientID, QuadricopterT):
     err, position = vrep.simxGetObjectPosition(clientID, QuadricopterT, -1, vrep.simx_opmode_oneshot_wait)
     return position
+
+def get_rot(clientID, QuadricopterT):
+    err, orientation = vrep.simxGetObjectOrientation(clientID, QuadricopterT, -1, vrep.simx_opmode_oneshot_wait)
+    return orientation
