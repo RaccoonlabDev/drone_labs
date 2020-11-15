@@ -34,7 +34,7 @@ def rotate_vect(rot,dist):
     :return: возвращаем точку повёрнутую на нужный угол
 
     """
-    rotate = np.array([[np.cos(rot), np.sin(rot)],
+    rotate = np.array([[np.cos(rot), -np.sin(rot)],
                        [np.sin(rot), np.cos(rot)]])
 
     pos = np.array([[dist],[0.0]])
@@ -49,7 +49,7 @@ def rotate_point2d(rot,xy_point):
     :return: возвращаем точку повёрнутую на нужный угол
 
     """
-    rotate = np.array([[np.cos(rot), np.sin(rot)],
+    rotate = np.array([[np.cos(rot), -np.sin(rot)],
                        [np.sin(rot), np.cos(rot)]])
     pos = np.array([[xy_point[0]], [xy_point[1]]])
     val = np.dot(rotate,pos)
